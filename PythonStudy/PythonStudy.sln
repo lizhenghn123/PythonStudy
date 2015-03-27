@@ -15,6 +15,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "use_module", "basic\use_mod
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "basic", "basic\basic\basic.pyproj", "{C2A7B037-F94D-4BBA-B706-54AC410DCCDC}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_os", "basic\test_os\test_os.pyproj", "{699654B8-56C2-4E6B-A0C3-FD5124726E10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,12 @@ Global
 		{C2A7B037-F94D-4BBA-B706-54AC410DCCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2A7B037-F94D-4BBA-B706-54AC410DCCDC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C2A7B037-F94D-4BBA-B706-54AC410DCCDC}.Release|Win32.ActiveCfg = Release|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +73,6 @@ Global
 		{A7FE15B9-C3DE-4D73-BF7A-8C6F72916447} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 		{B28A0161-B213-4E9F-B847-E2DFB2BE2212} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 		{C2A7B037-F94D-4BBA-B706-54AC410DCCDC} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{699654B8-56C2-4E6B-A0C3-FD5124726E10} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 	EndGlobalSection
 EndGlobal
