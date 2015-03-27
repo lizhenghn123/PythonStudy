@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "basic", "basic", "{8202AE33-245A-4A8C-9F7C-539A7222F732}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "def_function", "basic\def_function\def_function.pyproj", "{44E8A1C3-08E8-4387-BA7F-E7BD8607BC13}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "if_while_for", "basic\if_while_for\if_while_for.pyproj", "{F43C9B81-C20B-4D71-82AB-80A1E0D9B092}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "list_tuple_map", "basic\list_tuple_map\list_tuple_map.pyproj", "{A7FE15B9-C3DE-4D73-BF7A-8C6F72916447}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "use_module", "basic\use_module\use_module.pyproj", "{B28A0161-B213-4E9F-B847-E2DFB2BE2212}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44E8A1C3-08E8-4387-BA7F-E7BD8607BC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E8A1C3-08E8-4387-BA7F-E7BD8607BC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43C9B81-C20B-4D71-82AB-80A1E0D9B092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43C9B81-C20B-4D71-82AB-80A1E0D9B092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7FE15B9-C3DE-4D73-BF7A-8C6F72916447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7FE15B9-C3DE-4D73-BF7A-8C6F72916447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28A0161-B213-4E9F-B847-E2DFB2BE2212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28A0161-B213-4E9F-B847-E2DFB2BE2212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44E8A1C3-08E8-4387-BA7F-E7BD8607BC13} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{F43C9B81-C20B-4D71-82AB-80A1E0D9B092} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{A7FE15B9-C3DE-4D73-BF7A-8C6F72916447} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{B28A0161-B213-4E9F-B847-E2DFB2BE2212} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+	EndGlobalSection
+EndGlobal
