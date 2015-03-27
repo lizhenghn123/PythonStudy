@@ -9,13 +9,21 @@ Requirements
 The codes include:
 ------------
 * basic
-    - if_while_for
-    - def_function
-    - def_first_module
-    - list_tuple_map
+	- basic.py
+    - if_while_for.py
+    - def_function.py
+    - def_first_module.py
+    - list_tuple_map.py
 
+* file
+
+* os
+
+* net
     
 * advance
 
 * tools
+
+* scrapy
 
