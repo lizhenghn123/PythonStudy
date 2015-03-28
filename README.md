@@ -14,6 +14,7 @@ The codes include:
     - def_function.py
     - def_first_module.py
     - list_tuple_map.py
+    - def_class.py
 
 * file
 
