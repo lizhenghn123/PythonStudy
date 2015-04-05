@@ -21,6 +21,12 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "def_class", "basic\def_clas
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "string", "basic\string\string.pyproj", "{3D3D09F3-6607-4458-AEE3-D3AA331BE421}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "stack", "tools\stack\stack.pyproj", "{B838CC09-9988-45A2-87AF-0C2C6242FFCB}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "queue", "tools\queue\queue.pyproj", "{D637BE14-C228-4FD3-8200-248C2C2CFBC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +85,18 @@ Global
 		{3D3D09F3-6607-4458-AEE3-D3AA331BE421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3D09F3-6607-4458-AEE3-D3AA331BE421}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3D3D09F3-6607-4458-AEE3-D3AA331BE421}.Release|Win32.ActiveCfg = Release|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB}.Release|Win32.ActiveCfg = Release|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +110,7 @@ Global
 		{699654B8-56C2-4E6B-A0C3-FD5124726E10} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 		{084F7EBA-BDDF-4081-84EC-C14982315216} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 		{3D3D09F3-6607-4458-AEE3-D3AA331BE421} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{B838CC09-9988-45A2-87AF-0C2C6242FFCB} = {3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}
+		{D637BE14-C228-4FD3-8200-248C2C2CFBC8} = {3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}
 	EndGlobalSection
 EndGlobal
