@@ -102,6 +102,16 @@ def test_reference():
     del mylist[0] # remove first item
     print('shoplist is', shoplist)
     print('mylist is', mylist)  # notice that now the two lists are different 
+
+    s1 = [1,2,"hello",4]
+    s2 = [1]
+    if [1,5] in s1:
+        print("[1, 5] in %s" %s1)
+    if 1 in s1:
+        print("1 in %s"  %s1)
+    if "world" not in s1:
+        print("world not in %s" %s2 %s1)
+
 # End of test_reference
 
 if __name__ == '__main__' :
