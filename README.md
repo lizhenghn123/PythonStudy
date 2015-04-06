@@ -16,8 +16,10 @@ The codes include:
     - list_tuple_map.py
     - string.py
     - def_class.py
+    - test_lambda.py
 
 * file
+    - test_file.py
 
 * os
 

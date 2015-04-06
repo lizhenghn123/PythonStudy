@@ -21,16 +21,64 @@ def add(a, b = 2, c = 10):
     #print(a, "+", b, "+", c, "=", d)  # ok too
     return d;
 
-sayHello()  #call this func
-sayHello2("new function")  #call this func
-sayHello3("sayHello3")
-sayHello3("sayHello3", 3)
+def test1():
+    sayHello()  #call this func
+    sayHello2("new function")  #call this func
+    sayHello3("sayHello3")
+    sayHello3("sayHello3", 3)
+    
+    add(1)
+    add(1, 2)
+    add(1, 2, 3)
+    add(3, c = 5)   # 这种调用方式，不像C系语言，参数a,b,c是无意义的，此处称为关键参数
+    add(b = 3, a = 0, c=0)
+    print(add(a=3, c=4))
+    print(add.__doc__)
 
-add(1)
-add(1, 2)
-add(1, 2, 3)
-add(3, c = 5)   # 这种调用方式，不像C系语言，参数a,b,c是无意义的，此处称为关键参数
-add(b = 3, a = 0, c=0)
-print(add(a=3, c=4))
+#### 测试变长参数 ####
+# 参数名前有一个*，表示会把所有参数当成一个元组，有两个**，会把所有参数当成一个字典
+def variadic_params(*nkwargs, **kwargs):
+    print("print tuple args:"),
+    for i in nkwargs:
+       print i,
+    print("\nprint dict  args："),
+    for k,v in kwargs:
+        print("%s : %s" %(k, v))
+    print("\nprint over")
+# End
 
-print(add.__doc__)
+def variadic_func(func, *nkwargs, **kwargs):
+   try:
+       retval = func(*nkwargs, **kwargs)
+       result = (True, retval)
+   except Exception, diag:
+       result = (False, str(diag))
+   return result
+# End
+
+def test_variadic():
+    
+    variadic_params(1,2,3)
+    variadic_params(1)
+    variadic_params(2,5,"d", "a=1", {"b" : "2", "v" : 80})
+    variadic_params("v=1", "z=1234")
+
+    funcs = (int, long, float)
+    vals = (1234, 12.34, '1234', '12.34')
+    
+    for eachFunc in funcs:
+        print '-' * 20
+        for eachVal in vals:
+            retval = variadic_func(eachFunc, eachVal)
+            if retval[0]:
+                print '%s(%s) =' %(eachFunc.__name__, `eachVal`), retval[1]
+            else:
+                print '%s(%s) = FAILED:' %(eachFunc.__name__, `eachVal`), retval[1]
+
+# End
+
+if __name__ == '__main__':
+    test1()
+    print("*******************************************")
+    test_variadic()
+    print("*******************************************")

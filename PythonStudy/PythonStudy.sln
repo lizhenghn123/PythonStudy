@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "file", "file", "{184B79F1-7
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_file", "file\test_file\test_file.pyproj", "{4873C819-6DBB-4364-BE58-64F5D5A264EF}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "lambda", "basic\lambda\lambda.pyproj", "{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,12 @@ Global
 		{4873C819-6DBB-4364-BE58-64F5D5A264EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4873C819-6DBB-4364-BE58-64F5D5A264EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4873C819-6DBB-4364-BE58-64F5D5A264EF}.Release|Win32.ActiveCfg = Release|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,5 +131,6 @@ Global
 		{B838CC09-9988-45A2-87AF-0C2C6242FFCB} = {3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}
 		{D637BE14-C228-4FD3-8200-248C2C2CFBC8} = {3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}
 		{4873C819-6DBB-4364-BE58-64F5D5A264EF} = {184B79F1-76B4-4EC3-B2B4-8119729824FC}
+		{314A50D7-7D23-4A6A-9B72-CE3D10FBB2A7} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 	EndGlobalSection
 EndGlobal
