@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=gb2312
+from time import ctime, sleep
 
 # 测试python中的函数定义和调用方式，注意定义时函数名后面的":"号
 def sayHello():
@@ -37,13 +38,14 @@ def test1():
 
 #### 测试变长参数 ####
 # 参数名前有一个*，表示会把所有参数当成一个元组，有两个**，会把所有参数当成一个字典
-def variadic_params(*nkwargs, **kwargs):
+def variadic_params(one, *nkwargs, **kwargs):
+    print("print main args: %s" %str(one))
     print("print tuple args:"),
     for i in nkwargs:
        print i,
     print("\nprint dict  args："),
-    for k,v in kwargs:
-        print("%s : %s" %(k, v))
+    for k,v in kwargs.items():
+        print("(%s : %s) " %(k, v)),
     print("\nprint over")
 # End
 
@@ -60,8 +62,12 @@ def test_variadic():
     
     variadic_params(1,2,3)
     variadic_params(1)
-    variadic_params(2,5,"d", "a=1", {"b" : "2", "v" : 80})
-    variadic_params("v=1", "z=1234")
+    variadic_params("huo",5,"d",a=1)
+    variadic_params(1,v=1, z=1234)
+    variadic_params(2, *(4, 6, 8), **{'foo': 10, 'bar': 12}) 
+    aTuple = (6, 7, 8) 
+    aDict = {'z': 9} 
+    variadic_params(4, 9, x=2, y=1, *aTuple, **aDict)  # 这种方式太灵活了！
 
     funcs = (int, long, float)
     vals = (1234, 12.34, '1234', '12.34')
@@ -74,7 +80,56 @@ def test_variadic():
                 print '%s(%s) =' %(eachFunc.__name__, `eachVal`), retval[1]
             else:
                 print '%s(%s) = FAILED:' %(eachFunc.__name__, `eachVal`), retval[1]
+# End
 
+# 内部函数
+def outerFunc():
+    def innerFunc():
+        print("innerFunc")
+    print("outerFunc")
+    innerFunc()
+# End
+
+def test_innerFunc():
+    outerFunc()   # ok
+   # innerFunc()   # error, 函数不可见
+# End
+
+# 装饰器：我们能在包装的环境下在合适的时机调用它。我们在执行函数之前，可以运行些预备代码，也可以在
+# 执行代码之后做些清理工作。所以当你看见一个装饰器函数的时候，很可能在里面找到这样一些代码， 
+# 它定义了某个函数并在定义内的某处嵌入了对目标函数的调用或者至少一些引用。 从本质上看，
+#这些特征引入了 java 开发者称呼之为 AOP （Aspect Oriented Programming， 面向方面编程） 的概念。
+# 装饰器的语法以@开头，接着是装饰器函数的名字和可选的参数。紧跟着装饰器声明的是被修饰的函数，和装饰函数的可选参数。
+def tsfunc(func):
+    def wrappedFunc():
+        print '[%s] %s() called' % (ctime(), func.__name__)
+        return func()
+    return wrappedFunc
+
+@tsfunc
+def foo():
+    print("---foo()---")
+
+def test_aop():
+    foo()   # 相当于在真正调用foo之前会先执行tsfunc
+    sleep(4)
+    for i in range(2):
+        sleep(1)
+        foo()
+    tsfunc(foo)()
+# End
+
+# 传递函数：函数是可调用的
+def convert(func, seq):
+	'conv. sequence of numbers to same type'
+	return [func(eachNum) for eachNum in seq]
+
+def test_func():
+    myseq = (123, 45.67, -6.2e8, 999999999L)
+    print convert(int, myseq)
+    print convert(long, myseq)
+    bar = convert  # bar 引用 convert
+    print bar(float, myseq)
 # End
 
 if __name__ == '__main__':
@@ -82,3 +137,8 @@ if __name__ == '__main__':
     print("*******************************************")
     test_variadic()
     print("*******************************************")
+    test_innerFunc()
+    print("*******************************************")
+    test_aop()
+    print("*******************************************")
+    test_func()
