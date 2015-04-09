@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=gb2312
 from time import ctime, sleep
+from random import randint
 
 # 测试python中的函数定义和调用方式，注意定义时函数名后面的":"号
 def sayHello():
@@ -112,7 +113,7 @@ def foo():
 
 def test_aop():
     foo()   # 相当于在真正调用foo之前会先执行tsfunc
-    sleep(4)
+    sleep(3)
     for i in range(2):
         sleep(1)
         foo()
@@ -132,6 +133,59 @@ def test_func():
     print bar(float, myseq)
 # End
 
+# 内建函数filter、map、reduce的使用
+def test_filter_map_reduce():
+    #### filter(func, seq)
+    def is_odd(n):     # 判断奇数
+        return n % 2 != 0
+
+    num1 = []
+    for i in range(9):   # 产生9个随机数
+        num1.append(randint(1,99))
+    print num1
+
+    num = filter(is_odd, num1)   # 将序列num1元素逐次调用布尔函数is_odd，为true则返回该元素
+    print num
+
+    num = filter(lambda n : n%2!=0, num1)
+    print num
+
+    num = [n for n in num1 if n %2!=0]
+    print num
+
+    num = [n for n in [randint(1, 99) for i in range(9)] if n%2 !=0]
+    print num
+
+    #### map(func, seq1, seq2...)
+    num = map(lambda x : x + 2, [0,1,2,3,4])
+    print num 
+
+    num = map(lambda x : x**2, range(5))
+    print num 
+
+    num = [x**2 for x in range(5)]
+    print num 
+
+    num = map(lambda x,y : x+y, [1,2,3], [4,5,6])
+    print num 
+    num = map(lambda x,y : (x+y,x-y), [1,2,3], [4,5,6])
+    print num 
+    num = map(None, [1,2,3], [4,5,6])
+    print num 
+
+    #### reduce(func, seq[, init])
+    def mysum(x,y) : return x+y
+    num2 = range(1,6)
+    total = 0
+    for x in num2:
+        total = mysum(total, x)
+    print total
+    
+    total = reduce((lambda x,y : x+y), range(1,6))
+    print total 
+
+# End
+
 if __name__ == '__main__':
     test1()
     print("*******************************************")
@@ -142,3 +196,5 @@ if __name__ == '__main__':
     test_aop()
     print("*******************************************")
     test_func()
+    print("*******************************************")
+    test_filter_map_reduce()
