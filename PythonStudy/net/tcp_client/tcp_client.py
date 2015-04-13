@@ -26,5 +26,21 @@ def create_simple_tcp_client():
     tcpCliSock.close()
 # End
 
+def create_simple_tcp_client_test_socketserver():
+    while True:
+        tcpCliSock = socket(AF_INET, SOCK_STREAM)
+        tcpCliSock.connect(ADDR)
+        data = raw_input('> ')
+        if not data:
+            break
+        tcpCliSock.send('%s\r\n' % data)
+        data = tcpCliSock.recv(BUFSIZ)
+        if not data:
+            break
+        print data.strip()
+        tcpCliSock.close()
+# End
+
 if __name__ == "__main__":
-    create_simple_tcp_client()
+    #create_simple_tcp_client()
+    create_simple_tcp_client_test_socketserver()

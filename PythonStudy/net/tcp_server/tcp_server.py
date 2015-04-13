@@ -4,6 +4,8 @@
 from socket import *
 from time import ctime
 
+from SocketServer import TCPServer, StreamRequestHandler
+
 HOST = 'localhost'
 PORT = 21567
 BUFSIZ = 1024
@@ -30,5 +32,17 @@ def create_simple_tcp_server():
     tcpSerSock.close()
 # End
 
+def create_tcp_server_by_socketserver():
+    class MyRequestHandler(StreamRequestHandler):
+        def handle(self):
+            print '...connected from:', self.client_address
+            self.wfile.write('[%s] %s' % (ctime(), self.rfile.readline()))
+
+    tcpServ = TCPServer(ADDR, MyRequestHandler)
+    print 'waiting for connection...'
+    tcpServ.serve_forever()
+# End
+
 if __name__ == "__main__":
-    create_simple_tcp_server()
+   # create_simple_tcp_server()
+    create_tcp_server_by_socketserver()
