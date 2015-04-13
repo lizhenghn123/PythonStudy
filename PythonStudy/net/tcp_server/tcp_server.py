@@ -6,6 +6,8 @@ from time import ctime
 
 from SocketServer import TCPServer, StreamRequestHandler
 
+from twisted import protocol, reactor
+
 HOST = 'localhost'
 PORT = 21567
 BUFSIZ = 1024

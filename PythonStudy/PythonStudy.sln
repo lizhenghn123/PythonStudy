@@ -43,6 +43,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "udp_client", "net\udp_clien
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "tcp_client", "net\tcp_client\tcp_client.pyproj", "{DDF26542-3EC4-457B-8BF1-2E42972A37A4}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_thread", "basic\test_thread\test_thread.pyproj", "{84B3BF6F-27D5-4FC0-8428-9270C254A24E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,12 @@ Global
 		{DDF26542-3EC4-457B-8BF1-2E42972A37A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDF26542-3EC4-457B-8BF1-2E42972A37A4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{DDF26542-3EC4-457B-8BF1-2E42972A37A4}.Release|Win32.ActiveCfg = Release|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,5 +178,6 @@ Global
 		{5096796C-47FC-46FF-9036-F2A681735478} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 		{E0FE09D1-2958-49FB-B1DD-F47DC885F9EC} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 		{DDF26542-3EC4-457B-8BF1-2E42972A37A4} = {94553EBC-A474-4E42-987A-963EA285E6E3}
+		{84B3BF6F-27D5-4FC0-8428-9270C254A24E} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 	EndGlobalSection
 EndGlobal
