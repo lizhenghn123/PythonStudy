@@ -17,7 +17,7 @@ The codes include:
     - string.py
     - def_class.py
     - test_lambda.py
-
+	- test_thread.py
 * file
     - test_file.py
 
@@ -30,6 +30,7 @@ The codes include:
 * tools
     - stack.py
     - queue.py
+    - os.Queue.py
 
 * scrapy
 
