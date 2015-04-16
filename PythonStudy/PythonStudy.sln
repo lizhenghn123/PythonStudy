@@ -53,6 +53,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{D7FC3D80-8029-
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_mysqldb", "db\test_mysqldb\test_mysqldb.pyproj", "{62A5A800-6821-4A0D-9A11-9A8FB21C69F2}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "EchoServers", "net\EchoServers\EchoServers.pyproj", "{78CDFE72-9C5A-42CF-8283-E5E5E3234806}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_twisted", "net\test_twisted\test_twisted.pyproj", "{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +187,18 @@ Global
 		{62A5A800-6821-4A0D-9A11-9A8FB21C69F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62A5A800-6821-4A0D-9A11-9A8FB21C69F2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{62A5A800-6821-4A0D-9A11-9A8FB21C69F2}.Release|Win32.ActiveCfg = Release|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806}.Release|Win32.ActiveCfg = Release|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -208,5 +224,7 @@ Global
 		{3E023C94-A3D2-4F91-92E6-0DCA3D752043} = {3A53160C-E1E4-4C18-BFCC-6C97C53C76D7}
 		{2185260F-224F-465A-9254-3181DC948C9F} = {184B79F1-76B4-4EC3-B2B4-8119729824FC}
 		{62A5A800-6821-4A0D-9A11-9A8FB21C69F2} = {D7FC3D80-8029-4185-9FC2-3C1354BA3F98}
+		{78CDFE72-9C5A-42CF-8283-E5E5E3234806} = {94553EBC-A474-4E42-987A-963EA285E6E3}
+		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 	EndGlobalSection
 EndGlobal

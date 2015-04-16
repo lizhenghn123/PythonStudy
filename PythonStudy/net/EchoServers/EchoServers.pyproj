@@ -3,15 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>aac950a6-7eb2-4220-a837-1d7cce6f758a</ProjectGuid>
+    <ProjectGuid>78cdfe72-9c5a-42cf-8283-e5e5e3234806</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test_twisted.py</StartupFile>
+    <StartupFile>EchoServers.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>test_twisted</Name>
-    <RootNamespace>test_twisted</RootNamespace>
+    <Name>EchoServers</Name>
+    <RootNamespace>EchoServers</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="test_twisted.py" />
+    <Compile Include="EchoServers.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
