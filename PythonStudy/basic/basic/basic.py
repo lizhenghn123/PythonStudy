@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=gb2312
+import time
 
 def test_assert():
     mylist = ['item']
@@ -14,13 +15,15 @@ def test_basic():
 
     listone = [2, 3, 4]               # 列表综合
     listtwo = [2*i for i in listone if i > 2]
-    print listtwo 
+    print(listtwo) 
 
     x,y,z = 1 # 多重赋值
     x,y,z = 2, 1.25, "hello"
 
     x,y = 1,2
     x,y = y,x  # 值交换
+
+    print(time.strftime('%Y%m%d%H%M%S'))
 # End
 if __name__ == '__main__':
     test_basic();
