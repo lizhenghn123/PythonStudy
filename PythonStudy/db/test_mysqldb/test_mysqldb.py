@@ -16,6 +16,16 @@ dbuser = "root"
 dbpass = "123456"
 dbtable = "tb"
 
+chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789"
+
+def generate_strs():
+    lens = len(chars)
+    one_str=""
+    for i in range(10):
+        ch = random.randrange(1, lens)
+        one_str += chars[ch]
+    return one_str    
+
 def getConnection():
     pass
 
@@ -48,8 +58,14 @@ def test_mysqldb2():
     cur.execute("insert into tb VALUES('%s', '%s')" % (23, 'zxcv'))
 
     tb_data = {123:'n123', 345:'v345', 456:'f456'}
-    cur.executemany("insert into tb VALUES(%s, %s)" , [(45, '555555')])
-    cur.executemany("insert into tb VALUES(%s, %s)" , [(k,v) for k,v in tb_data.items()])
+    cur.executemany("insert into tb VALUES(%s, %s)", [(45, '555555')])
+    cur.executemany("insert into tb VALUES(%s, %s)", [(k,v) for k,v in tb_data.items()])
+
+    for i in range(1000, 2000, 5):
+        cur.execute("insert into tb VALUES(%s, '%s')" % (i, generate_strs()))
+        
+    #cur.executemany("insert into tb VALUES('%s', '%s')", [(i,generate_strs()) for i in range(2000, 3000, 100)])
+    cur.executemany("insert into tb VALUES(%s, %s)", [(i,generate_strs()) for i in range(2000, 3000, 100)])
     
     cur.execute("select * from %s" % dbtable)
     #print("select count = %s", str(cur.rowcount()))
