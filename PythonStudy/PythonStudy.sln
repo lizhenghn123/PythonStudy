@@ -59,6 +59,12 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_twisted", "net\test_tw
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_tuling123", "net\test_tuling123\test_tuling123.pyproj", "{AAC950A6-7EB2-4220-A837-1D7CCE6F888A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scrapy", "scrapy", "{70BF13AC-7685-4A85-B75D-EFC4FEBE0649}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_urllib", "scrapy\test_urllib\test_urllib.pyproj", "{DBB84724-63C5-4599-85E1-414F5902D989}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_yield", "basic\test_yield\test_yield.pyproj", "{EB117155-9BED-4D38-9955-99D8FA956295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +213,18 @@ Global
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F888A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F888A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F888A}.Release|Win32.ActiveCfg = Release|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DBB84724-63C5-4599-85E1-414F5902D989}.Release|Win32.ActiveCfg = Release|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -235,5 +253,7 @@ Global
 		{78CDFE72-9C5A-42CF-8283-E5E5E3234806} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F758A} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F888A} = {94553EBC-A474-4E42-987A-963EA285E6E3}
+		{DBB84724-63C5-4599-85E1-414F5902D989} = {70BF13AC-7685-4A85-B75D-EFC4FEBE0649}
+		{EB117155-9BED-4D38-9955-99D8FA956295} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
 	EndGlobalSection
 EndGlobal

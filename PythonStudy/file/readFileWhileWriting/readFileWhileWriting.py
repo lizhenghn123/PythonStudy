@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+ï»¿#!/usr/bin/env python
 # coding=utf-8
 #date : 2015-04-14
 import os
 import time
 
-# ¼ÙÉèÒ»¸ö³ÌĞòÕıÔÚÍùÄ³Ò»ÎÄ¼şÖĞĞ´Êı¾İ£¨Ö»ÏŞ×·¼Ó£¬±ÈÈçĞ´ÈÕÖ¾£©£¬±¾½Å±¾¾Í¿ÉÒÔÃ¿´Î¶ÁÈ¡ĞÂÌí¼ÓµÄĞĞ²¢ÏÔÊ¾
-# Ïàµ±ÓÚlinuxÏÂµÄtail -f ÃüÁî
+# å‡è®¾ä¸€ä¸ªç¨‹åºæ­£åœ¨å¾€æŸä¸€æ–‡ä»¶ä¸­å†™æ•°æ®ï¼ˆåªé™è¿½åŠ ï¼Œæ¯”å¦‚å†™æ—¥å¿—ï¼‰ï¼Œæœ¬è„šæœ¬å°±å¯ä»¥æ¯æ¬¡è¯»å–æ–°æ·»åŠ çš„è¡Œå¹¶æ˜¾ç¤º
+# ç›¸å½“äºlinuxä¸‹çš„tail -f å‘½ä»¤
 
 g_filepath = r"test.log"
-g_try_readfile_timeout = 0.5   # Ãë
+g_try_readfile_timeout = 0.5   # ç§’
 
-def tailFile(path):               # Ò»¸ö¾­µä×ö·¨
+def tailFile0(path):               # ä¸€ä¸ªç»å…¸åšæ³•
     file = open(path)
     #file = open(path, "r", -1, "utf8")
     while(True):
@@ -35,7 +35,7 @@ def tailFile1(path):
             print(line)
 # End
 
-def tailFile2(path):            # ´ÖÂ³×ö·¨£¬¼òµ¥µÄ¼ÇÂ¼ÉÏ´Î¶ÁÁË¶àÉÙĞĞ£¬¹Ø±ÕÎÄ¼şÔÙ´ò¿ª£¬È»ºóÌø¹ı¶Á¹ıµÄĞĞÊı
+def tailFile2(path):            # ç²—é²åšæ³•ï¼Œç®€å•çš„è®°å½•ä¸Šæ¬¡è¯»äº†å¤šå°‘è¡Œï¼Œå…³é—­æ–‡ä»¶å†æ‰“å¼€ï¼Œç„¶åè·³è¿‡è¯»è¿‡çš„è¡Œæ•°
     file = open(path)   
     line_last_count = 0 
     line_count = 0;        
@@ -56,7 +56,23 @@ def tailFile2(path):            # ´ÖÂ³×ö·¨£¬¼òµ¥µÄ¼ÇÂ¼ÉÏ´Î¶ÁÁË¶àÉÙĞĞ£¬¹Ø±ÕÎÄ¼şÔÙ
                 print(line)
 # End                      
 
+def tailFile(file):               # ä¸€ä¸ªç»å…¸åšæ³•
+    while(True):
+        where = file.tell()
+        line = file.readline()
+        if not line:           
+            time.sleep(g_try_readfile_timeout)  # sleep 
+            file.seek(where)
+        else:
+            yield (line)          # æ³¨æ„æ­¤å¤„yieldçš„ç”¨æ³•
+# End
+
+      
 if __name__ == "__main__":
-    #tailFile(g_filepath)
+    
+    for line in tailFile(open(g_filepath)):
+        print(line),
+
+    tailFile0(g_filepath)
     tailFile1(g_filepath)
     tailFile2(g_filepath)
