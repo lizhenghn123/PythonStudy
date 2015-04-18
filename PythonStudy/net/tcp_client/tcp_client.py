@@ -12,17 +12,17 @@ ADDR = (HOST, PORT)
 def create_simple_tcp_client():
     tcpCliSock = socket(AF_INET, SOCK_STREAM)
     tcpCliSock.connect(ADDR)
-
+    #file = tcpCliSock.makefile("rw", 0)  # 创建一个文件类对象，可读可写，0表示禁止在磁盘缓存
     while True:
         data = raw_input('> ')
         if not data:
             break
-        tcpCliSock.send(data)
-        data = tcpCliSock.recv(BUFSIZ)
+        tcpCliSock.send(data)    # file.write(data)
+        data = tcpCliSock.recv(BUFSIZ)  # file.read(data)
         if not data:
             break
-        print data
-
+        print data               
+    # file.close()
     tcpCliSock.close()
 # End
 
