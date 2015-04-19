@@ -43,7 +43,7 @@ def variadic_params(one, *nkwargs, **kwargs):
     print("print main args: %s" %str(one))
     print("print tuple args:"),
     for i in nkwargs:
-       print i,
+       print(i),
     print("\nprint dict  args£º"),
     for k,v in kwargs.items():
         print("(%s : %s) " %(k, v)),
