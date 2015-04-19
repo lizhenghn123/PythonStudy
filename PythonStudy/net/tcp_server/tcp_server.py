@@ -4,9 +4,9 @@
 from socket import *
 from time import ctime
 
-from SocketServer import TCPServer, StreamRequestHandler
+from SocketServer import TCPServer, StreamRequestHandler, ThreadingMixIn, ForkingMixIn
 
-from twisted import protocol, reactor
+#from twisted import protocol, reactor
 
 HOST = 'localhost'
 PORT = 21567
@@ -46,6 +46,36 @@ def create_tcp_server_by_socketserver():
     tcpServ.serve_forever()
 # End
 
+class TimeRequestHandler(StreamRequestHandler):
+    def handle(self):   #rfile和wfile是由socket.makefile()创建的文件对象
+        print("Connection from", self.client_address)
+        req = self.rfile.readline().strip()
+        if req == "asctime":
+            result = time.asctime()
+        elif req == "seconds":
+            result = str(int(time.time()))
+        elif req == "rfc822":
+            result = time.strftime("%a, %d %b %Y %H:%M:%S +0000",
+                     time.gmtime())
+        else:
+            result = """Unhandled request.  Send a line with one of the
+following words:
+
+asctime -- for human-readable time
+seconds -- seconds since the Unix Epoch
+rfc822  -- date/time in format used for mail and news posts"""
+        self.wfile.write(result + "\n")
+
+class ThreadingTimeServer(ThreadingMixIn, TCPServer):
+    allow_reuse_address = 1           # 地址复用。只需要设置即可
+    #address_family = socket.AF_INET6  # 用于支持IPv6
+class ForkingTimeServer(ForkingMixIn, TCPServer):
+    allow_reuse_address = 1
+def test_ThreadingTimeServer():
+    srvr = ThreadingTimeServer(ADDR, TimeRequestHandler)
+    srvr.serve_forever()
+
 if __name__ == "__main__":
    # create_simple_tcp_server()
-    create_tcp_server_by_socketserver()
+   # create_tcp_server_by_socketserver()
+    test_ThreadingTimeServer()
