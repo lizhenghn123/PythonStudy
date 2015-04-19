@@ -23,6 +23,7 @@ def create_simple_tcp_server():
         tcpCliSock, addr = tcpSerSock.accept()
         print '...connected from:', addr
 
+        tcpCliSock.settimeout(5)  # 5s
         while True:
             data = tcpCliSock.recv(BUFSIZ)
             if not data:

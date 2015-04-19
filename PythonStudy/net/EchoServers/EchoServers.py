@@ -20,6 +20,7 @@ def handle(client_socket, client_address):
 # socket.socket
 def test_echoserver_iterative():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server_socket.bind(listen_address)
     server_socket.listen(5)
     while True:

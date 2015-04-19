@@ -65,6 +65,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_urllib", "scrapy\test_
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_yield", "basic\test_yield\test_yield.pyproj", "{EB117155-9BED-4D38-9955-99D8FA956295}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_socket", "net\test_socket\test_socket.pyproj", "{9DA50A52-7389-4AFB-82D9-084580FBEE2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,12 @@ Global
 		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EB117155-9BED-4D38-9955-99D8FA956295}.Release|Win32.ActiveCfg = Release|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -255,5 +263,6 @@ Global
 		{AAC950A6-7EB2-4220-A837-1D7CCE6F888A} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 		{DBB84724-63C5-4599-85E1-414F5902D989} = {70BF13AC-7685-4A85-B75D-EFC4FEBE0649}
 		{EB117155-9BED-4D38-9955-99D8FA956295} = {8202AE33-245A-4A8C-9F7C-539A7222F732}
+		{9DA50A52-7389-4AFB-82D9-084580FBEE2B} = {94553EBC-A474-4E42-987A-963EA285E6E3}
 	EndGlobalSection
 EndGlobal
