@@ -4,6 +4,7 @@
 # date=2015-04-20
 import os
 import sys
+from optparse import OptionParser
 
 class Util:
     @staticmethod
@@ -79,15 +80,29 @@ def visitAllFiles():
             #print("is dir : ", curr)
             for file in os.listdir(curr):
                 #print("----", file)
-                dirs.append(curr+os.sep+file)    
-def main():
-    #cl = CountLines(os.getcwd())
-    #cl = CountLines(r'D:\zzz\readme.txt')
-    cl = CountLines(r'D:\os_share\PythonStudy\src')
+                dirs.append(curr+os.sep+file)
 
+def main():
+    command_parser = OptionParser(usage="%prog [options] [args]", version="%prog 0.8.0",
+                                  description="Count the amount of lines and files on the directory")
+    command_parser.add_option("-p", "--path", action="store", dest="path", default=os.getcwd(),
+                              help="set the dir which will be count, default is current directory")    
+    command_parser.add_option("-d", "--detail", action="store_true", dest="show_detail", default=False,
+                              help="show more detail in the result")
+
+    command_options, command_args = command_parser.parse_args()
+    print(command_options, command_args)
+
+    show_detail = command_options.show_detail
+
+    cl = CountLines(command_options.path)   # r'D:\zzz\readme.txt', r'/root/lizhenghn/src'
+
+    print('Count files and lines in %s' % (os.getcwd() + os.sep))
     cl.countAll()
-    cl.printResult()
-    cl.printResultDetail()
+    if show_detail:
+        cl.printResultDetail()
+    else:
+        cl.printResult()
 
 if __name__ == '__main__':
     #visitAllFiles()
