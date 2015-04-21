@@ -33,6 +33,8 @@ class Util:
 
 class CountLines(object):
     def __init__(self, dir, rules=''):
+        if dir[len(dir)-1] == os.sep:
+            dir = dir[:len(dir)-1]
         self.searchDir_ = dir
         self.countLines_, self.countFiles_ = 0, 0
         self.fileLineDict_ = {}
