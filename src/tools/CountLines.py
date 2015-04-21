@@ -42,13 +42,8 @@ class CountLines(object):
         sorted_list = sorted(self.fileLineDict_.iteritems(), key=lambda d: d[0], reverse=False)
         for one_file in sorted_list:
             file_name, file_lines = one_file
-            file_name = file_name[len(self.searchDir_) + 1:]
-            #print one_file[0]           
+            file_name = file_name[len(self.searchDir_) + 1:]       
             print('%-50s %10s' % (file_name, str(one_file[1])))
-        #originDirLen = len(self.searchDir_)
-        #for file, lines in self.fileLineDict_.items():
-        #    print '%-50s %10s' % (file[originDirLen+1:], str(lines))
-
     def countAll(self):
         if Util.isFile(self.searchDir_):
             self.analyzeFile(self.searchDir_)
@@ -65,7 +60,6 @@ class CountLines(object):
                 for file in os.listdir(curr):
                     dirs.append(curr + os.sep + file)
             
-        #files = 
 # End class CountLines
 
 def visitAllFiles():
