@@ -18,6 +18,8 @@ The codes include:
     - def_class.py
     - test_lambda.py
 	- test_thread.py
+	- test_osfork.py
+	- test_yield.py
 * file
     - test_file.py
     - readFileWhileWriting.py
@@ -31,7 +33,9 @@ The codes include:
     - udp_client.py
     - test_twisted.py
     - EchoServers
+    - httpservers.py
     - test_tuling123.py
+    - test_httpauth.py
   
 * database
 	- test_mysqldb
@@ -42,7 +46,8 @@ The codes include:
     - stack.py
     - queue.py
     - os.Queue.py
-
+	- CountLines.py
+	- 
 * scrapy
 	- test_urllib.py
 
