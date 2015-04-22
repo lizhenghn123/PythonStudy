@@ -51,12 +51,20 @@ class ThreadPoll(object):
             self.threadPoll_[i].join()
     def createThreads(self):
         for i in xrange(self.numThreads_):
-            self.threadPoll_.append(MyThread(threadFunc, (self,), name = 'thread_%d' % i))
+            self.threadPoll_.append(MyThread(ThreadPoll.threadFunc, (self,), name = 'thread_%d' % i))
+    @staticmethod
+    def threadFunc(thrd, thrdPoll):
+        #syc_log("[%s] thread starting...." % threading.currentThread().getName())
+        syc_log("[%s] thread starting...." % thrd.getName())
+        while 1:
+            func, args = thrdPoll.getJob()
+            syc_log("[%s] (%s, %s)" % (threading.currentThread().getName(), func, args))
+            #thread.set(func, args)
+            res = apply(func, (args))
 # End class ThreadPoll
-
-def threadFunc(thrd, threadpoll):
+def threadFunc(self, threadpoll):
     #syc_log("[%s] thread starting...." % threading.currentThread().getName())
-    syc_log("[%s] thread starting...." % thrd.getName())
+    syc_log("[%s] thread starting...." % threading.currentThread().getName())
     while 1:
         func, args = threadpoll.getJob()
         syc_log("[%s] (%s, %s)" % (threading.currentThread().getName(), func, args))
