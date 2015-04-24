@@ -39,20 +39,21 @@ class EventLoop(object):
         self.readBuffers_ = {}
         self.writeBuffers_ = {}
         self.sockets_ = { acceptsock.fileno() : acceptsock }
-	self.updateSocket(self.acceptSock_, select.POLLIN)
+        self.updateSocket(self.acceptSock_, EventLoop.EVENT_READ)
     
     def fd2socket(self, fd):
         return self.sockets_[fd]
     
     def updateSocket(self, sock, event):
+        fd = sock.fileno()
         if event == EventLoop.EVENT_ALL:
-            self.poller_.enableAll(sock.fileno())
+            self.poller_.enableAll(fd)
         elif event & EventLoop.EVENT_READ:
             self.poller_.enableRead(sock.fileno())
         elif event & EventLoop.EVENT_WRITE:
-            self.poller_.enableWrite(sock.fileno())
+            self.poller_.enableWrite(fd)
         else:
-            self.poller_.disableAll(sock.fileno())
+            self.poller_.disableAll(fd)
        
     def handleAccept(self, sock):
         """Process a new connection"""
@@ -110,7 +111,7 @@ class EventLoop(object):
             results = self.poller_.loop_once()
             print('EventLoop has [%d] events!' % len(results))
             for fd, event in results:
-                #print(fd, event)
+               # print(fd, event)
                 if fd == self.acceptSock_.fileno() and event == EventLoop.EVENT_READ:
                     try:
                         client, addr = self.acceptSock_.accept()
@@ -126,6 +127,7 @@ class EventLoop(object):
                 elif event == EventLoop.EVENT_WRITE:
                     self.handleWrite(self.fd2socket(fd))
                 else:
+                    print('something is error on [%d][%d]' % (fd, event))
                     self.handleError(self.fd2socket(fd))
 # End class EventLoop
 
