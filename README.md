@@ -47,7 +47,7 @@ The codes include:
     - queue.py
     - Queue.Queue.py
     - CountLines.py
-    - 
+    - GeneratePasswd.py
 
 * scrapy
     - test_urllib.py
