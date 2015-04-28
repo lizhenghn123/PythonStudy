@@ -43,11 +43,15 @@ The codes include:
 * advance
 
 * tools
-    - stack.py
-    - queue.py
+    - Stack.py
+    - Queue.py
     - Queue.Queue.py
     - CountLines.py
     - GeneratePasswd.py
+    - test_pexpect.py
+    - ssh_by_pexpect.py
+    - ThreadPool.py
+    - CountLines.py
 
 * scrapy
     - test_urllib.py
