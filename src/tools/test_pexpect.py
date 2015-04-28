@@ -47,7 +47,7 @@ def test_spawn():
     fout.close()
 
 # expect 不断从读入缓冲区中匹配目标正则表达式，当匹配结束时 pexpect 的 before 成员中保存了缓冲区中匹配成功处之前的内容.
-#  pexpect 的 after 成员保存的是缓冲区中与目标正则表达式相匹配的内容。
+# pexpect 的 after 成员保存的是缓冲区中与目标正则表达式相匹配的内容。
 def test():
     child = pexpect.spawn('/bin/ls /')  
     child.expect (pexpect.EOF)  
