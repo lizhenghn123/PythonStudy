@@ -6,6 +6,7 @@ from time import sleep,time
 from Queue import Queue
 import threading
 import time
+# Queue.Queue 是线程间通信和同步的最有用也是最简单的方式
 
 # 生产者消费者 
 
