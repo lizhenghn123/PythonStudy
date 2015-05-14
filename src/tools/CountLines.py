@@ -140,7 +140,7 @@ def main():
     show_detail = command_options.show_detail
 
     cl = CountLines(command_options.path, command_options.rules) # r'D:\zzz\readme.txt', r'/root/lizhenghn/src'
-    print('Count files and lines in %s' % (os.getcwd() + os.sep))
+    print('Count files and lines in %s' % (command_options.path))
     cl.countAll()
     if show_detail:
         cl.printResultDetail()
