@@ -30,46 +30,59 @@ class MyThread(threading.Thread):
     def getResult(self):
         return self.res
     
-class ThreadPoll(object):         
+class ThreadPool(object):
     def __init__(self, numThreads):
         self.numThreads_ = numThreads
         self.threadPoll_ = []
         self.jobList_ = Queue(-1)
-        self.jobLock_ = threading.Lock()
-        self.sem_ = threading.Semaphore()
+        #self.jobLock_ = threading.Lock()
+        #self.sem_ = threading.Semaphore()
         self.createThreads()
+        self.running_ = True
     def addJob(self, func, args):
         self.jobList_.put((func, args))
     def getJob(self):
         func, args = self.jobList_.get()
         return (func, args)
+    def size(self):
+        return self.jobList_.qsize()
+    def empty(self):
+        return self.jobList_.empty()
     def run(self):
         for i in xrange(len(self.threadPoll_)):
             self.threadPoll_[i].start()
-    def stop(self):
+    def join(self):
+        while 1:
+            if not self.jobList_.empty():
+                time.sleep(1)
+            else:
+                self.running_ = False
+                for i in xrange(len(self.threadPoll_)):
+                    self.addJob(ThreadPool.nullFunc, ()) # 增加一个空回调，主要是唤醒各个线程
+                break
         for i in xrange(len(self.threadPoll_)):
             self.threadPoll_[i].join()
     def createThreads(self):
         for i in xrange(self.numThreads_):
-            self.threadPoll_.append(MyThread(ThreadPoll.threadFunc, (self,), name = 'thread_%d' % i))
+            self.threadPoll_.append(MyThread(ThreadPool.threadFunc, (self,), name = 'thread_%d' % i))
+    @staticmethod
+    def nullFunc():
+        pass
     @staticmethod
     def threadFunc(thrd, thrdPoll):
         #syc_log("[%s] thread starting...." % threading.currentThread().getName())
         syc_log("[%s] thread starting...." % thrd.getName())
         while 1:
             func, args = thrdPoll.getJob()
-            syc_log("[%s] (%s, %s)" % (threading.currentThread().getName(), func, args))
-            #thread.set(func, args)
-            res = apply(func, (args))
+            if not thrdPoll.running_:
+                break
+            #syc_log("[%s] (%s, %s)" % (threading.currentThread().getName(), func, args))
+            try:
+                res = apply(func, (args))
+            except Exception, e:
+                continue
+            
 # End class ThreadPoll
-def threadFunc(self, threadpoll):
-    #syc_log("[%s] thread starting...." % threading.currentThread().getName())
-    syc_log("[%s] thread starting...." % threading.currentThread().getName())
-    while 1:
-        func, args = threadpoll.getJob()
-        syc_log("[%s] (%s, %s)" % (threading.currentThread().getName(), func, args))
-        #thread.set(func, args)
-        res = apply(func, (args))
 
 def printHello():
     syc_log("[%s] thread printHello" % threading.currentThread().getName())
@@ -79,23 +92,25 @@ def printSum(num1, num2):
     syc_log("[%s] thread printSum [%d]" % (threading.currentThread().getName(), num1+num2))
     
 def test_threadpoll():
-    poll = ThreadPoll(3)
+    poll = ThreadPool(3)
     poll.run()
     time.sleep(2)  # wait for all threads starting
 
     poll.addJob(printHello, ())
     poll.addJob(printNum, (1,))
-    time.sleep(1)
+    #time.sleep(1)
     poll.addJob(printNum, (2,))
-    #return
-    
-    time.sleep(5)
+
     for i in xrange(100):
         if i % 2 == 0:
             poll.addJob(printNum, (i,))
         else:
             poll.addJob(printSum, (i,i+1))
-            
+
+    print "======================================="
+    poll.join()
+    print "##########################################"
+
 if __name__ == '__main__':
     test_threadpoll()
     syc_log("######## GAME OVER ########")
